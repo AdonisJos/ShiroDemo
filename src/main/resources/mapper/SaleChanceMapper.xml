@@ -7,23 +7,55 @@
 	<select id="queryAll" resultType="SaleChance">
 		SELECT * FROM t_sale_chance
 	</select>
-	
-	
+
+	<select id="searchByCODS" parameterType="SaleChance"
+		resultType="SaleChance">
+		Select * from t_sale_chance where 1=1
+		<if test="state != null and state !=''">
+			AND state=#{state}
+		</if>
+		<if test="null != customerName and customerName !=''">
+			AND customerName=#{customerName}
+		</if>
+		<if test="null != overView and overView !=''">
+			AND overView=#{overView}
+		</if>
+		<if test="null != devResult and devResult !=''">
+			AND devResult=#{devResult}
+		</if>
+	</select>
+
 	<insert id="insertOne" parameterType="SaleChance">
-		INSERT into t_sale_chance() VALUES  
-		(#{chanceSource},
-		#{customerName},
-		#{cgjl},
-		#{overview},
-		#{linkMan},
-		#{linkPhone},
-		#{description},
-		#{createMan},
-		#{createTime},
-		#{assignMan},
-		#{assignTime},
-		#{state},
-		#{devResult}
-		)
+		INSERT into t_sale_chance
+		(chanceSource,customerName,cgjl,overView,linkMan,linkPhone,description,createMan,createTime,assignMan,assignTime,state,devResult)
+		VALUES
+		(#{chanceSource},#{customerName},#{cgjl},#{overView},#{linkMan},#{linkPhone},
+		#{description},#{createMan},#{createTime},#{assignMan},#{assignTime},#{state},#{devResult})
 	</insert>
+
+	<update id="updateOne" parameterType="SaleChance">
+		Update t_sale_chance
+		<set>
+			chanceSource = #{chanceSource},
+			customerName = #{customerName},
+			cgjl = #{cgjl},
+			overView = #{overView},
+			linkMan = #{linkMan},
+			linkPhone = #{linkPhone},
+			description = #{description},
+			createMan = #{createMan},
+			createTime = #{createTime},
+			assignMan = #{assignMan},
+			assignTime = #{assignTime},
+			state = #{state},
+			devResult = #{devResult}
+		</set>
+		where id = #{id}
+	</update>
+
+	<delete id="deleteOne" parameterType="java.lang.Integer">
+		delete from t_cus_dev_plan
+		where saleChanceId=#{id};
+		delete from t_sale_chance where id=#{id};
+	</delete>
 </mapper>

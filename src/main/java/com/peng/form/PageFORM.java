@@ -2,32 +2,35 @@ package com.peng.form;
 
 public class PageFORM {
 
-	/** 第几页  */
-	private String page;
+	/** 第几页 */
+	private Integer page;
 	/** 行数 */
-	private String rows;
-	
+	private Integer rows;
+
 	public PageFORM() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-	public PageFORM(String page, String rows) {
+
+	public PageFORM(Integer page, Integer rows) {
 		super();
 		this.page = page;
 		this.rows = rows;
 	}
 
-	public String getPage() {
+	public Integer getPage() {
 		return page;
 	}
-	public void setPage(String page) {
+
+	public void setPage(Integer page) {
 		this.page = page;
 	}
-	public String getRows() {
+
+	public Integer getRows() {
 		return rows;
 	}
-	public void setRows(String rows) {
+
+	public void setRows(Integer rows) {
 		this.rows = rows;
 	}
 
@@ -36,9 +39,4 @@ public class PageFORM {
 		return "PageFORM [page=" + page + ", rows=" + rows + "]";
 	}
 
-	
-	
-	
-	
-	
 }
