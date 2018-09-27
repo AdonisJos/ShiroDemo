@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+            "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.peng.dao.mapper.CustomerServiceMapper">
+
+	<insert id="insertOne" parameterType="CustomerService">
+		INSERT into
+		t_customer_service
+		(serveType,overView,customer,state,servicerequest,createPeople,
+		createTime,assigner,assignTime,serviceProce,serviceProcePeople,serviceProceTime,serviceProceResult,myd)
+		VALUES
+		(#{serveType},#{overView},#{customer},#{state},#{servicerequest},#{createPeople},
+		#{createTime},#{assigner},#{assignTime},#{serviceProce},#{serviceProcePeople},#{serviceProceTime},#{serviceProceResult},#{myd})
+	</insert>
+
+	<update id="updateOne" parameterType="CustomerService">
+		Update t_customer_service
+		<set>
+			serveType = #{serveType},
+			overView = #{overView},
+			customer = #{customer},
+			state = #{state},
+			servicerequest = #{servicerequest},
+			createPeople = #{createPeople},
+			createTime = #{createTime},
+			assigner = #{assigner},
+			assignTime = #{assignTime},
+			serviceProce = #{serviceProce},
+			serviceProcePeople = #{serviceProcePeople},
+			serviceProceTime = #{serviceProceTime},
+			serviceProceResult = #{serviceProceResult},
+			myd = #{myd}
+		</set>
+		where id = #{id}
+	</update>
+
+
+	<select id="queryByExample" resultType="CustomerService">
+		SElECT * from t_customer_service where 1=1
+		<if test="serveType!=null and serveType!=''">
+			and serveType = #{serveType}
+		</if>
+		<if test="overView!=null and overView!=''">
+			and overView = #{overView}
+		</if>
+		<if test="customer!=null and customer!=''">
+			and customer = #{customer}
+		</if>
+		<if test="state!=null and state!=''">
+			and state = #{state}
+		</if>
+		<if test="servicerequest!=null and servicerequest!=''">
+			and servicerequest = #{servicerequest}
+		</if>
+		<if test="createPeople!=null and createPeople!=''">
+			and createPeople = #{createPeople}
+		</if>
+		<if test="createTime!=null and createTime!=''">
+			and createTime = #{createTime}
+		</if>
+		<if test="assigner!=null and assigner!=''">
+			and assigner = #{assigner}
+		</if>
+		<if test="assignTime!=null and assignTime!=''">
+			and assignTime = #{assignTime}
+		</if>
+		<if test="serviceProce!=null and serviceProce!=''">
+			and serviceProce = #{serviceProce}
+		</if>
+		<if test="serviceProcePeople!=null and serviceProcePeople!=''">
+			and serviceProcePeople = #{serviceProcePeople}
+		</if>
+		<if test="serviceProceTime!=null and serviceProceTime!=''">
+			and serviceProceTime = #{serviceProceTime}
+		</if>
+		<if test="serviceProceResult!=null and serviceProceResult!=''">
+			and serviceProceResult = #{serviceProceResult}
+		</if>
+		<if test="myd!=null and myd!=''">
+			and myd = #{myd}
+		</if>
+	</select>
+
+</mapper>

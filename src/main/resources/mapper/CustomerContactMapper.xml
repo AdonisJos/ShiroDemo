@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+            "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.peng.dao.mapper.CustomerContactMapper">
+
+	<select id="queryByCusId" resultType="CustomerContact">
+		SELECT * FROM
+		t_customer_contact where cusId =#{cusId}
+	</select>
+	<insert id="insertOne" parameterType="CustomerContact">
+		INSERT INTO
+		t_customer_contact
+		(cusId,contactTime,address,overView)
+		VALUES
+		(#{cusId},#{contactTime},#{address},#{overView})
+	</insert>
+
+	<update id="updateOne" parameterType="CustomerContact">
+		UPDATE t_customer_contact
+		<set>
+			cusId = #{cusId},
+			contactTime = #{contactTime},
+			address =
+			#{address},
+			overView = #{overView}
+		</set>
+		where id = #{id}
+	</update>
+
+	<delete id="deleteOne" parameterType="java.lang.Integer">
+		delete from t_customer_contact where id=#{id};
+	</delete>
+</mapper>

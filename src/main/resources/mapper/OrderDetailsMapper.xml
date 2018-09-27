@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+            "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.peng.dao.mapper.OrderDetailsMapper">
+		
+	<delete id="deleteOne" parameterType="java.lang.Integer">
+		delete from t_order_details where orderId=#{id};
+	</delete>
+	
+	<select id="queryByOrderId" resultType="OrderDetails">
+		SELECT * FROM
+		t_order_details where orderid =#{orderid}
+	</select>
+</mapper>

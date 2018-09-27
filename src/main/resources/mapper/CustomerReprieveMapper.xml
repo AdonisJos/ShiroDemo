@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+            "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.peng.dao.mapper.CustomerReprieveMapper">
+
+	<select id="queryByExample" resultType="CustomerReprieve">
+		SELECT * FROM t_customer_reprieve where 1=1
+		<if test="id!=null and id!=''">
+			and id=#{id}
+		</if>
+		<if test="lossId!=null and lossId!=''">
+			and lossId=#{lossId}
+		</if>
+		<if test="measure!=null and measure!=''">
+			and measure=#{measure}
+		</if>
+	</select>
+
+
+	<insert id="insertOne" parameterType="CustomerReprieve">
+		INSERT INTO
+		t_customer_reprieve (lossId,measure) VALUES (#{lossId},#{measure})
+	</insert>
+
+	<update id="updateOne" parameterType="CustomerReprieve">
+		UPDATE t_customer_reprieve
+		<set>
+			lossId = #{lossId},
+			measure = #{measure}
+		</set>
+		where id = #{id}
+	</update>
+
+	<delete id="deleteOne" parameterType="java.lang.Integer">
+		delete from t_customer_reprieve where id=#{id}
+	</delete>
+
+</mapper>

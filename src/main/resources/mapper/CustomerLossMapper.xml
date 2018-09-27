@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+            "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.peng.dao.mapper.CustomerLossMapper">
+
+	<select id="queryAll" resultType="CustomerLoss">
+		SELECT * FROM t_customer_loss
+	</select>
+
+
+	<select id="queryByExample" resultType="CustomerLoss">
+		SELECT * FROM t_customer_loss where 1=1
+		<if test="id!=null and id!=''">
+			and id=#{id}
+		</if>
+		<if test="cusNo!=null and cusNo!=''">
+			and cusNo=#{cusNo}
+		</if>
+		<if test="cusName!=null and cusName!=''">
+			and cusName=#{cusName}
+		</if>
+		<if test="cusManager!=null and cusManager!=''">
+			and cusManager=#{cusManager}
+		</if>
+		<if test="lastOrderTime!=null and lastOrderTime!=''">
+			and lastOrderTime=#{lastOrderTime}
+		</if>
+		<if test="confirmLossTime!=null and confirmLossTime!=''">
+			and confirmLossTime=#{confirmLossTime}
+		</if>
+		<if test="state!=null and state!=''">
+			and state=#{state}
+		</if>
+		<if test="lossReason!=null and lossReason!=''">
+			and lossReason=#{lossReason}
+		</if>
+	</select>
+
+	<select id="queryById" parameterType="java.lang.Integer" resultType="CustomerLoss">
+		select * from t_customer_loss where id = #{id}
+	</select>
+
+
+	<insert id="insertOne" parameterType="CustomerLoss">
+		INSERT INTO
+		t_customer_loss (cusNo,cusName,cusManager,lastOrderTime,confirmLossTime,state,lossReason) 
+		VALUES 
+		(#{cusNo},#{cusName},#{cusManager},#{lastOrderTime},#{confirmLossTime},#{state},#{lossReason})
+	</insert>
+
+	<update id="updateOne" parameterType="CustomerLoss">
+		UPDATE t_customer_loss
+		<set>
+			cusNo = #{cusNo},
+			cusName = #{cusName},
+			cusManager = #{cusManager},
+			lastOrderTime = #{lastOrderTime},
+			confirmLossTime = #{confirmLossTime},
+			state = #{state},
+			lossReason = #{lossReason}
+		</set>
+		where id = #{id}
+	</update>
+</mapper>

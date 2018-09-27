@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+            "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.peng.dao.mapper.CustomerLinkmanMapper">
+
+	<select id="queryByCusId" resultType="CustomerLinkman">
+		SELECT * FROM
+		t_customer_linkman where cusId =#{cusId}
+	</select>
+	<insert id="insertOne" parameterType="CustomerLinkman">
+		INSERT INTO
+		t_customer_linkman
+		(cusId,linkName,sex,zhiwei,officePhone,phone)
+		VALUES
+		(#{cusId},#{linkName},#{sex},#{zhiwei},#{officePhone},#{phone})
+	</insert>
+
+	<update id="updateOne" parameterType="CustomerLinkman">
+		UPDATE t_customer_linkman
+		<set>
+			cusId = #{cusId},
+			linkName = #{linkName},
+			sex = #{sex},
+			zhiwei =
+			#{zhiwei},
+			officePhone = #{officePhone},
+			phone = #{phone}
+		</set>
+		where id = #{id}
+	</update>
+
+
+	<delete id="deleteOne" parameterType="java.lang.Integer">
+		delete from t_customer_linkman where id=#{id};
+	</delete>
+</mapper>
