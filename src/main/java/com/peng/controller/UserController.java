@@ -17,6 +17,10 @@ import com.peng.POJO.UserPOJO;
 import com.peng.entity.User;
 import com.peng.service.UserService;
 
+/*
+ * 用户管理
+ */
+
 @Controller
 @RequestMapping("user")
 public class UserController {

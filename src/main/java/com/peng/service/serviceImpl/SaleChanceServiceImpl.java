@@ -44,6 +44,7 @@ public class SaleChanceServiceImpl implements SaleChanceService {
 
 	@Override
 	public List<SaleChance> searchByCODS(PageFORM pageFORM, SaleChance saleChance) {
+		System.out.println(saleChance);
 		return saleChanceMapper.searchByCODS(saleChance);
 	}
 

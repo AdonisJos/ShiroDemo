@@ -20,4 +20,20 @@ public class CustomerServiceImpl implements CustomerService {
 		return customerMapper.queryAll();
 	}
 
+	@Override
+	public void saveOne(Customer customer) {
+		
+		if (null!=customer.getId()) {
+			customerMapper.updateOne(customer);
+		}else {
+			customerMapper.insertOne(customer);
+		}
+		
+	}
+
+	@Override
+	public Customer queryById(Integer id) {
+		return customerMapper.queryById(id);
+	}
+
 }

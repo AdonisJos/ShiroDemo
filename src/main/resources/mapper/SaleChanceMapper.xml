@@ -20,7 +20,7 @@
 		<if test="null != overView and overView !=''">
 			AND overView=#{overView}
 		</if>
-		<if test="null != devResult and devResult !=''">
+		<if test="null != devResult">
 			AND devResult=#{devResult}
 		</if>
 	</select>
@@ -54,8 +54,7 @@
 	</update>
 
 	<delete id="deleteOne" parameterType="java.lang.Integer">
-		delete from t_cus_dev_plan
-		where saleChanceId=#{id};
+		delete from t_cus_dev_plan where saleChanceId=#{id};
 		delete from t_sale_chance where id=#{id};
 	</delete>
 </mapper>

@@ -10,7 +10,7 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/jquery-easyui-1.3.3/jquery.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/jquery-easyui-1.3.3/jquery.easyui.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/jquery-easyui-1.3.3/locale/easyui-lang-zh_CN.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/jquery-easyui-1.3.3/jquery.edatagrid.js"></script>
+<script type="text/javascript" src="/jquery-easyui-1.3.3/jquery.edatagrid.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/common.js"></script>
 <script type="text/javascript">
  
@@ -24,7 +24,7 @@
 	 
 	 $("#dg").edatagrid({
 		url:'${pageContext.request.contextPath}/linkMan/list.do?cusId=${param.cusId}',
-		saveUrl:'${pageContext.request.contextPath}/linkMan/save.do?customer.id=${param.cusId}',
+		saveUrl:'${pageContext.request.contextPath}/linkMan/save.do?cusId=${param.cusId}',
 		updateUrl:'${pageContext.request.contextPath}/linkMan/save.do',
 		destroyUrl:'${pageContext.request.contextPath}/linkMan/delete.do'
 	 });

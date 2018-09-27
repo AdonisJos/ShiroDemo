@@ -26,7 +26,7 @@
 	 
 	 $("#dg").edatagrid({
 		url:'${pageContext.request.contextPath}/customerReprieve/list.do?lossId=${param.lossId}',
-		saveUrl:'${pageContext.request.contextPath}/customerReprieve/save.do?customerLoss.id=${param.lossId}',
+		saveUrl:'${pageContext.request.contextPath}/customerReprieve/save.do?lossId=${param.lossId}',
 		updateUrl:'${pageContext.request.contextPath}/customerReprieve/save.do',
 		destroyUrl:'${pageContext.request.contextPath}/customerReprieve/delete.do'
 	 });

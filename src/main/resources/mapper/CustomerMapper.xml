@@ -4,8 +4,53 @@
 
 <mapper namespace="com.peng.dao.mapper.CustomerMapper">
 
-	<select id="queryAll" resultType="SaleChance">
+	<select id="queryById" resultType="Customer">
+		SELECT * FROM t_customer where id=#{id}
+	</select>
+
+	<select id="queryAll" resultType="Customer">
 		SELECT * FROM t_customer
 	</select>
+	
+	<insert id="insertOne" parameterType="Customer">
+		INSERT INTO t_customer
+		(khno,name,area,cusManager,level,myd,xyd,address,postCode,
+		phone,fax,webSite,yyzzzch,fr,zczj,nyye,khyh,khzh,dsdjh)		 
+		VALUES
+		(#{khno},#{name},#{area},#{cusManager},#{level},#{myd},#{xyd},#{address},#{postCode},
+		#{phone},#{fax},#{webSite},#{yyzzzch},#{fr},#{zczj},#{nyye},#{khyh},#{khzh},#{dsdjh})
+	</insert>
+	
+	<update id="updateOne" parameterType="Customer">
+		UPDATE t_customer
+		<set>
+			khno = #{khno},
+			name = #{name},
+			area = #{area},
+			cusManager = #{cusManager},
+			level = #{level},
+			myd = #{myd},
+			xyd = #{xyd},
+			address = #{address},
+			postCode = #{postCode},
+			phone = #{phone},
+			fax = #{fax},
+			webSite = #{webSite},
+			yyzzzch = #{yyzzzch},
+			fr = #{fr},
+			zczj = #{zczj},
+			nyye = #{nyye},
+			khyh = #{khyh},
+			khzh = #{khzh},
+			dsdjh = #{dsdjh}		
+		</set>
+		where id = #{id}
+	</update> 
+	
+	<delete id="deleteOne" parameterType="java.lang.Integer">
+		delete from t_customer_contact where cusId=#{id};		
+		delete from t_customer_linkman where cusId=#{id};
+		delete from t_sale_chance where id=#{id};
+	</delete>
 	
 </mapper>

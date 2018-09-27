@@ -15,7 +15,7 @@
  function searchCustomerService(){
 	 $("#dg").datagrid('load',{
 		"customer":$("#s_customer").val(), 
-		"overview":$("#s_overview").val(), 
+		"overView":$("#s_overView").val(), 
 		"serveType":$("#s_serveType").combobox("getValue"), 
 		"createTimefrom":$("#s_createTimefrom").datebox("getValue"), 
 		"createTimeto":$("#s_createTimeto").datebox("getValue")
@@ -52,7 +52,7 @@
    		<th field="cb" checkbox="true" align="center"></th>
    		<th field="id" width="50" align="center">编号</th>
    		<th field="customer" width="100" align="center">客户</th>
-   		<th field="overview" width="200" align="center">概要</th>
+   		<th field="overView" width="200" align="center">概要</th>
    		<th field="serveType" width="100" align="center">服务类型</th>
    		<th field="createPeople" width="100" align="center">创建人</th>
    		<th field="createTime" width="100" align="center">创建日期</th>
@@ -73,7 +73,7 @@
  	</div>
  	<div>
  		&nbsp;客户名称：&nbsp;<input type="text" id="s_customer" size="20" onkeydown="if(event.keyCode==13) searchCustomerService()"/>
- 		&nbsp;概要：&nbsp;<input type="text" id="s_overview" size="20" onkeydown="if(event.keyCode==13) searchCustomerService()"/>
+ 		&nbsp;概要：&nbsp;<input type="text" id="s_overView" size="20" onkeydown="if(event.keyCode==13) searchCustomerService()"/>
  		&nbsp;服务类型：&nbsp;<select class="easyui-combobox" id="s_serveType" editable="false" panelHeight="auto" >
  								<option value="">请选择...</option>	
  								<option value="咨询">咨询</option>
@@ -103,7 +103,7 @@
    		<tr>
    			<td>概要：</td>
    			<td colspan="4">
-   				<input type="text" id="overview" name="overview" style="width: 419px" readonly="readonly"/>
+   				<input type="text" id="overView" name="overView" style="width: 419px" readonly="readonly"/>
    			</td>
    		</tr>
    		<tr>

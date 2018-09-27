@@ -3,12 +3,7 @@ package com.peng.entity;
 import java.io.Serializable;
 import java.util.Date;
 
-public class SaleChance implements Serializable {
-
-	/**
-	 * 序列号
-	 */
-	private static final long serialVersionUID = 1L;
+public class SaleChance {
 
 	/** 编号 */
 	private Integer id;
@@ -38,13 +33,13 @@ public class SaleChance implements Serializable {
 	private String createMan;
 
 	/** 创建时间 */
-	private Date createTime;
+	private String createTime;
 
 	/** 指派人 */
 	private String assignMan;
 
 	/** 指派时间 */
-	private Date assignTime;
+	private String assignTime;
 
 	/** 状态 */
 	private Integer state;
@@ -52,56 +47,57 @@ public class SaleChance implements Serializable {
 	/** 客户开发状态 */
 	private Integer devResult;
 
+	
+
+	public SaleChance(String customerName, String overView, Integer devResult, Integer state) {
+		super();
+		this.customerName = customerName;
+		this.overView = overView;
+		this.devResult = devResult;
+		this.state = state;
+	}
 	public SaleChance() {
 		super();
-		// TODO Auto-generated constructor stub
+	}
+	
+	
+
+	public String getOverView() {
+		return overView;
 	}
 
-	public SaleChance(String customerName, String overView, String createMan, Integer state) {
-		super();
-		this.customerName = customerName;
+
+
+	public void setOverView(String overView) {
 		this.overView = overView;
-		this.createMan = createMan;
-		this.state = state;
 	}
 
-	public SaleChance(Integer id, String chanceSource, String customerName, Integer cgjl, String overView,
-			String linkMan, String linkPhone, String description, String createMan, Date createTime, String assignMan,
-			Date assignTime) {
-		super();
-		this.id = id;
-		this.chanceSource = chanceSource;
-		this.customerName = customerName;
-		this.cgjl = cgjl;
-		this.overView = overView;
-		this.linkMan = linkMan;
-		this.linkPhone = linkPhone;
-		this.description = description;
-		this.createMan = createMan;
+
+
+	public String getCreateTime() {
+		return createTime;
+	}
+
+
+
+	public void setCreateTime(String createTime) {
 		this.createTime = createTime;
-		this.assignMan = assignMan;
+	}
+
+
+
+	public String getAssignTime() {
+		return assignTime;
+	}
+
+
+
+	public void setAssignTime(String assignTime) {
 		this.assignTime = assignTime;
 	}
 
-	public SaleChance(Integer id, String chanceSource, String customerName, Integer cgjl, String overView,
-			String linkMan, String linkPhone, String description, String createMan, Date createTime, String assignMan,
-			Date assignTime, Integer state, Integer devResult) {
-		super();
-		this.id = id;
-		this.chanceSource = chanceSource;
-		this.customerName = customerName;
-		this.cgjl = cgjl;
-		this.overView = overView;
-		this.linkMan = linkMan;
-		this.linkPhone = linkPhone;
-		this.description = description;
-		this.createMan = createMan;
-		this.createTime = createTime;
-		this.assignMan = assignMan;
-		this.assignTime = assignTime;
-		this.state = state;
-		this.devResult = devResult;
-	}
+
+
 
 	public Integer getId() {
 		return id;
@@ -175,28 +171,12 @@ public class SaleChance implements Serializable {
 		this.createMan = createMan;
 	}
 
-	public Date getCreateTime() {
-		return createTime;
-	}
-
-	public void setCreateTime(Date createTime) {
-		this.createTime = createTime;
-	}
-
 	public String getAssignMan() {
 		return assignMan;
 	}
 
 	public void setAssignMan(String assignMan) {
 		this.assignMan = assignMan;
-	}
-
-	public Date getAssignTime() {
-		return assignTime;
-	}
-
-	public void setAssignTime(Date assignTime) {
-		this.assignTime = assignTime;
 	}
 
 	public Integer getState() {

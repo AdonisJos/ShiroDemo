@@ -71,7 +71,7 @@
    		<th field="cb" checkbox="true" align="center"></th>
    		<th field="id" width="50" align="center">编号</th>
    		<th field="customer" width="100" align="center">客户</th>
-   		<th field="overview" width="200" align="center">概要</th>
+   		<th field="overView" width="200" align="center">概要</th>
    		<th field="serveType" width="100" align="center">服务类型</th>
    		<th field="createPeople" width="100" align="center">创建人</th>
    		<th field="createTime" width="100" align="center">创建日期</th>
@@ -110,7 +110,7 @@
    		<tr>
    			<td>概要：</td>
    			<td colspan="4">
-   				<input type="text" id="overview" name="overview" style="width: 419px" readonly="readonly"/>
+   				<input type="text" id="overView" name="overView" style="width: 419px" readonly="readonly"/>
    			</td>
    		</tr>
    		<tr>
